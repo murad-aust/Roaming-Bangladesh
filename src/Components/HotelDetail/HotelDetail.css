@@ -1,0 +1,24 @@
+.contain{
+    display: flex;
+    margin-left:20px;
+    margin-bottom: 5px;
+    border: none;
+    box-shadow:2px solid  darkgrey;
+    border-radius: 10px;
+
+}
+
+.contain img{
+    height: 210px;
+    width: 250px;
+    border-radius: 10px;
+}
+.details{
+    margin: 10px;
+
+
+}
+.reviewStar img{
+    height: 18px;
+    width: 18px;
+}

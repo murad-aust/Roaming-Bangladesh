@@ -1,0 +1,143 @@
+var places = [
+    
+        {
+            id:1,
+            placeId:1,
+            title:"Light bright airy stylish apt & safe peaceful stay",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.9,
+            reviewed:20,
+            price:34,
+            image:"https://i.ibb.co/Bnw9ySV/Rectangle-26.png"
+        },
+        {
+            id:2,
+            placeId:1,
+            title:"Apartment in Lost Panorama",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.8,
+            reviewed:10,
+            price:52,
+            image:"https://i.ibb.co/k4tRKGY/Rectangle-27.png"
+        },
+        {
+            id:3,
+            placeId:1,
+            title:"AR Lounge & Pool (r&r + b&b)",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.9,
+            reviewed:25,
+            price:44,
+            image:"https://i.ibb.co/4dCVGYF/Rectangle-28.png"
+        },
+        {
+            id:1,
+            placeId:2,
+            title:"Grand Selim Resort & Tour",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.9,
+            reviewed:20,
+            price:34,
+            image:"https://i.ibb.co/Bnw9ySV/Rectangle-26.png"
+        },
+        {
+            id:2,
+            placeId:2,
+            title:"Sreemangal Inn Hotel & Restaurant",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.8,
+            reviewed:10,
+            price:52,
+            image:"https://i.ibb.co/k4tRKGY/Rectangle-27.png"
+        },
+        {
+            id:3,
+            placeId:2,
+            title:"Paradise Lodge",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.9,
+            reviewed:25,
+            price:44,
+            image:"https://i.ibb.co/4dCVGYF/Rectangle-28.png"
+        },
+        {
+            id:1,
+            placeId:3,
+            title:"Light bright airy stylish apt & safe peaceful stay",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.9,
+            reviewed:20,
+            price:34,
+            image:"https://i.ibb.co/Bnw9ySV/Rectangle-26.png"
+        },
+        {
+            id:2,
+            placeId:3,
+            title:"Apartment in Lost Panorama",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.8,
+            reviewed:10,
+            price:52,
+            image:"https://i.ibb.co/k4tRKGY/Rectangle-27.png"
+        },
+        {
+            id:3,
+            placeId:3,
+            title:"AR Lounge & Pool (r&r + b&b)",
+            guest:4,
+            bedroom:2,
+            bed:2,
+            bath:2,
+            facilities: 'Wifi Air conditioning Kitchen ',
+            cancel:'Cancellation fexibility available',
+            star:4.9,
+            reviewed:25,
+            price:44,
+            image:"https://i.ibb.co/4dCVGYF/Rectangle-28.png"
+        }
+
+
+
+  
+  ]
+  export default places;

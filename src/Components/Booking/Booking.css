@@ -1,0 +1,41 @@
+
+.booking-form {
+    position: relative;
+    margin-top:100px;
+	background-color: #fff;
+    padding: 20px 20px;
+    width: 400px;
+	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+.submit-btn {
+	display: inline-block;
+	color: #fff;
+	background-color: orange;
+	font-weight: 700;
+	padding: 14px 30px;
+	border-radius: 4px;
+    border: none;
+    width: 100%;
+	
+}
+
+
+
+.booking-place {
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.booking-place h1 {
+	font-size: 52px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+}
+
+.booking-place p {
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.8);
+}
