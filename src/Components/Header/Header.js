@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import logo from '../../Logo.png';
 import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
-//import './Header.css'
 import { Link } from 'react-router-dom';
-import { AuthContext, UserContext } from '../../App';
+import { AuthContext} from '../../App';
 
 const Header = (props) => {
 
@@ -42,7 +41,7 @@ const Header = (props) => {
         <span style={{ color: 'orange', marginRight: '5px' }}  >{loggedInUser.name}</span>
         {
 
-          loggedInUser.success ?
+          loggedInUser.success && loggedInUser.isSignedIn ?
             <Button variant="warning" onClick={() => setLoggedInUser({})}>Sign Out</Button>
             :
             <Link to="/login" ><Button variant="warning"> Login </Button> </Link>

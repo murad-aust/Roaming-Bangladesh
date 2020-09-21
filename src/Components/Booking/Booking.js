@@ -51,7 +51,7 @@ const Booking = () => {
 							<form onSubmit={handleSubmit}>
 								<div className="form-group">
 									<label className="form-label">Origin</label>
-									<input name="origin" onBlur={handleBlur} className="form-control" type="text" />
+									<input name="origin" onBlur={handleBlur} className="form-control" type="text" required />
 								</div>
 								<div className="form-group">
 									<label className="form-label">Destination</label>

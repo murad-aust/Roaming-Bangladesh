@@ -63,7 +63,7 @@ export const handleFacebookSignIn = () => {
 export const handleSignedOut = () => {
   return firebase.auth().signOut()
     .then(res => {
-      const signedOutuser = {
+      const signedOutUser = {
         isSignedIn: false,
         name: '',
         email: '',
@@ -71,7 +71,7 @@ export const handleSignedOut = () => {
         success: false
 
       }
-      return signedOutuser;
+      return signedOutUser;
 
     })
     .catch(err => {
@@ -86,7 +86,6 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
   return firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(res => {
       const newUserInfo = res.user;
-      newUserInfo.error = '';
       updateUserName(name);
       newUserInfo.success = true;
       return newUserInfo;
@@ -138,7 +137,7 @@ const updateUserName = name => {
     displayName: name
   })
     .then(function () {
-      console.log('user name updated successfully')
+      console.log('name updated successfully')
 
     })
     .catch(function (error) {

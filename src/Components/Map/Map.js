@@ -10,8 +10,7 @@ const Map = () => {
       zoom: 3,
     },
   );
-  console.log(map);
-  console.log(google);
+ 
   return <div ref={ref} style={{ width: '500px', height: '630px', marginLeft: '20px' }} />;
 };
 
