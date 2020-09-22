@@ -18,7 +18,7 @@ export const AuthContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [place,setPlace] = useState(places);
+  const [place, setPlace] = useState(places);
   const {id, name, description, image} = place[0];
 
   const [information, setInformation]= useState(

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 import { UserContext } from '../../App';
 import places from '../../Data/places';
 import Header from '../Header/Header';
@@ -18,13 +17,10 @@ const Home = () => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    minHeight: '100%',
-    minWidth: '1024px',
     width: '100%',
-    height: 'auto',
+    height: '100%',
     position: 'fixed',
-    top: 0,
-    left: 0
+    
 
   }
   return (

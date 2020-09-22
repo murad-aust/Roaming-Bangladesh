@@ -17,8 +17,8 @@ const SingIn = () => {
     password: '',
     error: '',
     success: false,
-    confirm: '',
-    match: true,
+    confirmPassword: '',
+    match: false,
   })
 
   initializeLoginFramework();
@@ -30,6 +30,7 @@ const SingIn = () => {
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
+ 
 
 
   const googleSignIn = () => {
@@ -60,7 +61,7 @@ const SingIn = () => {
   const handleBlur = (e) => {
     let isFormValid = true;
     if (e.target.name === 'email') {
-      isFormValid = /\S+@\S+\.\S+/.test(e.target.value);
+       isFormValid = /\S+@\S+\.\S+/.test(e.target.value);
      
 
     }
@@ -69,11 +70,12 @@ const SingIn = () => {
       const passwordHasNumber = /\d{1}/.test(e.target.value);
       isFormValid = isPasswordValid && passwordHasNumber;
     }
+
+   
     if (isFormValid) {
       const newUserInfo = { ...user };
       newUserInfo[e.target.name] = e.target.value;
       setUser(newUserInfo);
-      console.log(user);
 
     }
 
@@ -86,10 +88,17 @@ const SingIn = () => {
   }
 
   const handleSubmit = (e) => {
+
+    if(user.password !== user.confirmPassword){
  
-    if (newUser && user.firstName && user.lastName && user.email && user.password) {
+      const newUserInfo = {...user, match: true }
+      setUser(newUserInfo);
+
+    } 
+    else if (newUser && user.firstName && user.lastName && user.email && user.password) {
 
       const name = user.firstName + ' ' + user.lastName;
+     
 
       createUserWithEmailAndPassword(name, user.email, user.password)
         .then(res => {
@@ -103,7 +112,9 @@ const SingIn = () => {
 
       signInUserWithEmailAndPassword(user.email, user.password)
         .then(res => {
+          
           handleResponse(res, true);
+      
         })
     }
     e.preventDefault();
@@ -137,11 +148,22 @@ const SingIn = () => {
             <div className="form-group">
               <input type="email" onBlur={handleBlur} name="email" placeholder="Enter email" required />
             </div>
-         
+
+           
 
             <div className="form-group">
               <input type="password" onBlur={handleBlur} name="password" placeholder="Enter password" required/>
             </div>
+           
+            { newUser &&
+            <div className="form-group">
+            <input type="password" onBlur= {handleBlur}  name="confirmPassword" placeholder="Confirm password" required/>
+            </div>
+            
+            }
+            {
+               newUser && user.match && <p style={{color: 'red'}}>Password did not match. Try again.</p>
+            }
 
             {
               !newUser &&

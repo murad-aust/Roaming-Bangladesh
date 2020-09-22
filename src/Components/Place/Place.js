@@ -5,7 +5,7 @@ import './Place.css';
 
 const Place = (props) => {
 
-    const{name, description, image} = props.place;
+    const{name,image} = props.place;
     const [information, setInformation] = useContext(UserContext);
 
     const handlePlaces=()=>{
@@ -16,8 +16,8 @@ const Place = (props) => {
         
         <div onClick={handlePlaces} style={{float: 'left'}}>
                 <Container  >
-                    <Card className="card" >
-                        <Card.Img variant="top" src={image} height="300px"/>
+                    <Card className="card" style={{ borderRadius: '10px'}}  >
+                        <Card.Img style={{ borderRadius: '10px'}} variant="top" src={image} height="300px"/>
                         <h3 >{name}</h3>
                     </Card>
               

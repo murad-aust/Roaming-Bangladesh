@@ -88,18 +88,19 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
       const newUserInfo = res.user;
       updateUserName(name);
       newUserInfo.success = true;
+      emailVerification();
       return newUserInfo;
 
 
 
     })
     .catch(error => {
-      // Handle Errors here.
+      
       const newUserInfo = {};
       newUserInfo.error = error.message;
       newUserInfo.success = false;
       return newUserInfo;
-      // ...
+  
     });
 }
 
@@ -146,15 +147,28 @@ const updateUserName = name => {
 }
 
 
+const emailVerification = () => {
+
+  const user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(function () {
+       console.log("verify message sent");
+  }).catch(function (error) {
+    // An error happened.
+  });
+}
+
+
+
 
 export const forgotPassword = email => {
 
   const auth = firebase.auth();
-  
-  
-  auth.sendPasswordResetEmail(email).then(function() {
+
+
+  auth.sendPasswordResetEmail(email).then(function () {
     // Email sent.
-  }).catch(function(error) {
+  }).catch(function (error) {
     // An error happened.
   });
 
