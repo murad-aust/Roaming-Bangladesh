@@ -59,36 +59,14 @@ export const handleFacebookSignIn = () => {
 
 
 
-
-export const handleSignedOut = () => {
-  return firebase.auth().signOut()
-    .then(res => {
-      const signedOutUser = {
-        isSignedIn: false,
-        name: '',
-        email: '',
-        photo: '',
-        success: false
-
-      }
-      return signedOutUser;
-
-    })
-    .catch(err => {
-      console.log(err);
-      console.log(err.message);
-    })
-
-}
-
 export const createUserWithEmailAndPassword = (name, email, password) => {
 
   return firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(res => {
       const newUserInfo = res.user;
       updateUserName(name);
+      emailVerify();
       newUserInfo.success = true;
-      emailVerification();
       return newUserInfo;
 
 
@@ -99,10 +77,12 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
       const newUserInfo = {};
       newUserInfo.error = error.message;
       newUserInfo.success = false;
+      console.log(error.message)
       return newUserInfo;
   
     });
 }
+
 
 export const signInUserWithEmailAndPassword = (email, password) => {
   return firebase.auth().signInWithEmailAndPassword(email, password)
@@ -125,11 +105,13 @@ export const signInUserWithEmailAndPassword = (email, password) => {
       const newUserInfo = {};
       newUserInfo.error = error.message;
       newUserInfo.success = false;
+      console.log(error.message)
       return newUserInfo;
 
 
     });
 }
+
 
 const updateUserName = name => {
   const user = firebase.auth().currentUser;
@@ -142,19 +124,20 @@ const updateUserName = name => {
 
     })
     .catch(function (error) {
-      console.log(error)
+      console.log(error.message)
     });
 }
 
 
-const emailVerification = () => {
+
+const emailVerify = () => {
 
   const user = firebase.auth().currentUser;
 
   user.sendEmailVerification().then(function () {
-       console.log("verify message sent");
+       console.log("Verify message sent");
   }).catch(function (error) {
-    // An error happened.
+    console.log(error.message)
   });
 }
 
@@ -169,7 +152,7 @@ export const forgotPassword = email => {
   auth.sendPasswordResetEmail(email).then(function () {
     // Email sent.
   }).catch(function (error) {
-    // An error happened.
+     console.log(error.message)
   });
 
 

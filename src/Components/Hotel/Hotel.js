@@ -9,7 +9,7 @@ const Hotel = () => {
     const [information, setInformation] = useContext(UserContext);
     const {name, from, to}= information;
     const specifiedHotel = hotels.filter(ht => ht.placeId === information.id);
-    console.log(information);
+
     
     return (
         <div className="container" >

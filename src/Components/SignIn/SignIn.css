@@ -41,5 +41,15 @@ input {
  .container{
      margin-bottom: 20px;
  }
- 
+ .popup {
+    position: fixed;
+   border-radius: 5px;
+    border: 3px solid #f1f1f1;
+   
+  }
+  .form-container { 
+    width: 390px;
+    padding: 20px;
+    background-color: rgb(248, 246, 246);
+  }
   
