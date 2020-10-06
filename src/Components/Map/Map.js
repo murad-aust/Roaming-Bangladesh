@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { UserContext } from '../../App';
 import apiKey from './config';
 
@@ -15,19 +15,27 @@ function Map() {
     const {lat, lng}= information;
     console.log(lat, lng);
 
-    const center = {
+    const location = {
       lat: lat,
       lng: lng
     };
+
+    const onLoad = marker => {
+      console.log('marker: ', marker)
+    }
   return (
     <LoadScript
       googleMapsApiKey={apiKey.apiKey}
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
+        center={location}
         zoom={10}
       >
+         <Marker
+      onLoad={onLoad}
+      position={location}
+    />
         
       </GoogleMap>
     </LoadScript>

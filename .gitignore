@@ -5,17 +5,14 @@
 /.pnp
 .pnp.js
 /src/Components/Map/config.js
-/src/Components/Signin/firebase.config.js
-
-
+/src/Components/Signin/config.js
 
 # testing
 /coverage
 
 # production
 /build
-.firebase/
-.firebaserc
+
 
 
 # misc
