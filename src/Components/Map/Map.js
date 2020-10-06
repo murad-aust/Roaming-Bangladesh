@@ -1,17 +1,37 @@
-import * as React from "react";
+import React, { useContext } from 'react'
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { UserContext } from '../../App';
+import apiKey from './config';
 
-import { useGoogleMaps } from "react-hook-google-maps";
-
-const Map = () => {
-  const { ref} = useGoogleMaps(
-    "AIzaSyAOBhEiODtZDsgTx3hG5wOwHDXei31OhWY",
-    {
-      center: { lat: 21.433920, lng: 91.987030 },
-      zoom: 3,
-    },
-  );
- 
-  return <div ref={ref} style={{ width: '500px', height: '630px', marginLeft: '20px' }} />;
+const containerStyle = {
+  width: '500px',
+  height: '600px'
 };
 
-export default Map;
+
+
+function Map() {
+  const [information, setInformation] = useContext(UserContext);
+    const {lat, lng}= information;
+    console.log(lat, lng);
+
+    const center = {
+      lat: lat,
+      lng: lng
+    };
+  return (
+    <LoadScript
+      googleMapsApiKey={apiKey.apiKey}
+    >
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={10}
+      >
+        
+      </GoogleMap>
+    </LoadScript>
+  )
+}
+
+export default React.memo(Map)

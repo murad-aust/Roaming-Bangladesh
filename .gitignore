@@ -4,12 +4,19 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/Components/Map/config.js
+/src/Components/Signin/firebase.config.js
+
+
 
 # testing
 /coverage
 
 # production
 /build
+.firebase/
+.firebaserc
+
 
 # misc
 .DS_Store
