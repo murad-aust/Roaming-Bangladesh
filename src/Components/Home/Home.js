@@ -6,6 +6,7 @@ import Information from '../Information/Information';
 import Place from '../Place/Place';
 
 
+
 const Home = () => {
   const [place, setPlace] = useState(places);
   const [information, setInformation] = useContext(UserContext)
@@ -19,12 +20,13 @@ const Home = () => {
     backgroundRepeat: 'no-repeat',
     width: '100%',
     height: '100%',
-    position: 'fixed',
+  
     
 
   }
   return (
     <div style={style} >
+     
       <Header color="white"></Header>
       <div className="d-flex">
 
@@ -39,6 +41,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

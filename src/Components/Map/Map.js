@@ -5,7 +5,8 @@ import apiKey from './config';
 
 const containerStyle = {
   width: '500px',
-  height: '600px'
+  height: '650px',
+  borderRadius:'10px'
 };
 
 
